@@ -36,10 +36,6 @@ const CruiseLeaseFormSchema = mongoose.Schema(
             type: String,
             required: true,
         },
-        photos: {
-            type: String,
-            required: true,
-        },
         firstname: {
             type: String,
             required: true,
