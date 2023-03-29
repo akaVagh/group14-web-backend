@@ -1,5 +1,5 @@
 const express = require('express')
-const routes= require('./Routers/JobApplicationFormRouter')
+const routes= require('./Routers/Routers')
 const cors = require('cors');
 const {mongoose} = require('./db')
 
