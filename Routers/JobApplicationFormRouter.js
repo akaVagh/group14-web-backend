@@ -4,8 +4,7 @@ const cruiseleaseregister = require('../Controller/CruiseLeaseFormController/cru
 const cruiseleaseupdate = require('../Controller/CruiseLeaseFormController/cruiseLeaseFormUpdate');
 const cruiseleasedelete = require('../Controller/CruiseLeaseFormController/cruiseLeaseFormDelete');
 const jobDetails = require('../Controller/jobApplicationFormController');
-const CruiseList = require('../Controller/CruiseListController');
-const getCruiseDetail = require('../Controller/CruiseDetailController');
+const feedback = require('../Controller/Feedback/feedback');
 const router = express.Router();
 
   
@@ -15,8 +14,6 @@ router.route("/cruiseleaseupdate").post(cruiseleaseupdate);
 router.route("/cruiseleaseregistration").post(cruiseleaseregister);
 router.route("/cruiseleasedelete").post(cruiseleasedelete);
 router.route("/cruiseleasefetch").post(cruiseleasefetch);
-router.route('/cruiselist').get(CruiseList.getCruiseList);
-router.route('/cruiselist/:id').get(CruiseList.getCruiseById);
-router.route('/cruisedetail/:id').get(getCruiseDetail);
-
+router.route("/feedback").post(feedback);
+  
 module.exports = router;
