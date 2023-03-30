@@ -6,17 +6,23 @@ const cruiseleasedelete = require('../Controller/CruiseLeaseFormController/cruis
 const jobDetails = require('../Controller/jobApplicationFormController');
 const CruiseList = require('../Controller/CruiseListController');
 const getCruiseDetail = require('../Controller/CruiseDetailController');
+const addNewUser = require('../Controller/UserAuth/user-registration');
+const login = require('../Controller/UserAuth/user-login');
+
 const router = express.Router();
 
-  
-router.route("/jobDetails").post(jobDetails);
+router.route('/jobDetails').post(jobDetails);
 
-router.route("/cruiseleaseupdate").post(cruiseleaseupdate);
-router.route("/cruiseleaseregistration").post(cruiseleaseregister);
-router.route("/cruiseleasedelete").post(cruiseleasedelete);
-router.route("/cruiseleasefetch").post(cruiseleasefetch);
+router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
+router.route('/cruiseleaseregistration').post(cruiseleaseregister);
+router.route('/cruiseleasedelete').post(cruiseleasedelete);
+router.route('/cruiseleasefetch').post(cruiseleasefetch);
 router.route('/cruiselist').get(CruiseList.getCruiseList);
 router.route('/cruiselist/:id').get(CruiseList.getCruiseById);
 router.route('/cruisedetail/:id').get(getCruiseDetail);
+
+//user authentication routes
+router.route('/addNewUser').post(addNewUser);
+router.route('/login').post(login);
 
 module.exports = router;
