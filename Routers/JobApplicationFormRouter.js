@@ -26,4 +26,10 @@ router.route('/cruisedetail/:id').get(getCruiseDetail);
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);
 
+router.route("/cruiseleaseupdate").post(cruiseleaseupdate);
+router.route("/cruiseleaseregistration").post(cruiseleaseregister);
+router.route("/cruiseleasedelete").post(cruiseleasedelete);
+router.route("/cruiseleasefetch").post(cruiseleasefetch);
+router.route("/feedback").post(feedback);
+  
 module.exports = router;
