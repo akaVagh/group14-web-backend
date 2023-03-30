@@ -20,26 +20,26 @@ router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
 router.route('/cruiseleaseregistration').post(cruiseleaseregister);
 router.route('/cruiseleasedelete').post(cruiseleasedelete);
 router.route('/cruiseleasefetch').post(cruiseleasefetch);
-router.route("/cruiseleaseupdate").post(cruiseleaseupdate);
-router.route("/cruiseleaseregistration").post(cruiseleaseregister);
-router.route("/cruiseleasedelete").post(cruiseleasedelete);
-router.route("/cruiseleasefetch").post(cruiseleasefetch);
+router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
+router.route('/cruiseleaseregistration').post(cruiseleaseregister);
+router.route('/cruiseleasedelete').post(cruiseleasedelete);
+router.route('/cruiseleasefetch').post(cruiseleasefetch);
 router.route('/cruiselist').get(CruiseList.getCruiseList);
 router.route('/cruiselist/:id').get(CruiseList.getCruiseById);
 router.route('/cruisedetail/:id').get(getCruiseDetail);
-router.route("/jobLocations").get(jobLocationsController);
-router.route("/jobApplication").post(JobApplicationController);
-router.route("/jobTitles").get(jobTitleController);
-router.route("/careersList").get(jobDetails);
+router.route('/jobLocations').get(jobLocationsController);
+router.route('/jobApplication').post(JobApplicationController);
+router.route('/jobTitles').get(jobTitleController);
+router.route('/careersList').get(jobDetails);
 
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);
 
-router.route("/cruiseleaseupdate").post(cruiseleaseupdate);
-router.route("/cruiseleaseregistration").post(cruiseleaseregister);
-router.route("/cruiseleasedelete").post(cruiseleasedelete);
-router.route("/cruiseleasefetch").post(cruiseleasefetch);
-router.route("/feedback").post(feedback);
-  
+router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
+router.route('/cruiseleaseregistration').post(cruiseleaseregister);
+router.route('/cruiseleasedelete').post(cruiseleasedelete);
+router.route('/cruiseleasefetch').post(cruiseleasefetch);
+router.route('/feedback').post(feedback);
+
 module.exports = router;
