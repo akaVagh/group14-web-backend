@@ -9,6 +9,7 @@ const getCruiseDetail = require('../Controller/CruiseDetailController');
 const addNewUser = require('../Controller/UserAuth/user-registration');
 const login = require('../Controller/UserAuth/user-login');
 
+const feedback = require('../Controller/Feedback/feedback');
 const router = express.Router();
 
 router.route('/jobDetails').post(jobDetails);
