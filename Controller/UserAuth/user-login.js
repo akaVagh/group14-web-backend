@@ -1,13 +1,12 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 const NewUsers = require('../../Models/user-signup');
 
 const login = async (req, res) => {
 	console.log('login request body is ' + JSON.stringify(req.body));
 
-	const TOKEN_SECRET =
-		'MDNNCeTQAAj1jYlt/yrTWZHYsayKxgRkYhXCx3qGPF//e2cYmjhBti0E9NVL4NtP5riRJADaI+n6nni+eAq/1HisVbtvAtGkCspDODr7r51SJIFBVjBxDXTXh5cdp/w6McMM2llzX9U5ZmBoNtZel5cU55/jcynsrBPPa3GnTtlTYIfplFDasiOLjKk1AA14Y6m2fokHGEjXUPwX3j40G/NP85sjWM0V5oRXYzWinJOMld/N5TF4AbeYvzBMDLeqFd0DhiUR4ReUp0MnaTOPGTIO/6j5joVOPIhnEQVzehGCGcFGZ+uCBbUG5YLxIfTFH3ECP7ghFhTyYg/hsVBsVw==';
-
+	TOKEN_SECRET = process.env.JWT_TOKEN_SECRET;
 	const email = req.body.email;
 	const password = req.body.password;
 	let userFound;
