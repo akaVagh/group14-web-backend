@@ -1,3 +1,5 @@
+/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+
 const mongoose = require("mongoose");
 
 const CruiseListSchema = mongoose.Schema(
