@@ -1,5 +1,8 @@
 //Author: Team
+
 const express = require('express');
+const router = express.Router();
+
 const cruiseleasefetch = require('../Controller/CruiseLeaseFormController/cruiseLeaseFormFetch');
 const cruiseleaseregister = require('../Controller/CruiseLeaseFormController/cruiseLeaseFormRegistration');
 const cruiseleaseupdate = require('../Controller/CruiseLeaseFormController/cruiseLeaseFormUpdate');
@@ -12,9 +15,10 @@ const CruiseList = require('../Controller/CruiseListController');
 const getCruiseDetail = require('../Controller/CruiseDetailController');
 const addNewUser = require('../Controller/UserAuth/user-registration');
 const login = require('../Controller/UserAuth/user-login');
-
+const updateUser = require('../Controller/UserAuth/update-user');
 const feedback = require('../Controller/Feedback/feedback');
-const router = express.Router();
+const deleteAccount = require('../Controller/UserAuth/delete-user');
+const createEvent = require('../Controller/CareersController/EventCreation/add-event');
 
 router.route('/jobDetails').post(jobDetails);
 router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
@@ -28,10 +32,13 @@ router.route('/jobLocations').get(jobLocationsController);
 router.route('/jobApplication').post(JobApplicationController);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
+router.route('/feedback').post(feedback);
+router.route('/addEvent').post(createEvent);
 
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);
-router.route('/feedback').post(feedback);
+router.route('/updateUser').put(updateUser);
+router.route('/deleteAccount/:userId').delete(deleteAccount);
 
 module.exports = router;
