@@ -1,5 +1,3 @@
-// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
-
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -15,18 +13,7 @@ const login = async (req, res) => {
 
 	try {
 		userFound = await NewUsers.findOne({ email }); // Use await to handle promises
-		const user = {
-			id: userFound._id,
-			firstName: userFound.firstName,
-			lastName: userFound.lastName,
-			username: userFound.username,
-			email: userFound.email,
-			birthdate: userFound.birthdate,
-			phone: userFound.phone,
-			address: userFound.address,
-			city: userFound.city,
-			country: userFound.country,
-		};
+
 		if (!userFound) {
 			return res.status(401).json({
 				message: 'User not found!',
@@ -53,11 +40,7 @@ const login = async (req, res) => {
 			{ expiresIn: '1h' }
 		);
 
-		return res.status(200).json({
-			user: user,
-			token: token,
-			expiresIn: 3600,
-		});
+		return res.status(200).json({ token: token, expiresIn: 3600 });
 	} catch (error) {
 		console.error(error.message); // Log error message to console
 		return res.status(500).json({ message: 'Login failed.' }); // Provide informative error message to client
