@@ -1,3 +1,5 @@
+// Author: Harsh Vaghani - B00923828 - harsh.vaghani@dal.ca
+
 const bcrypt = require('bcrypt');
 
 const NewUsers = require('../../Models/user-signup');
@@ -10,10 +12,12 @@ const addNewUser = async (req, res) => {
 			...req.body,
 			password: hash,
 		};
-
 		try {
 			const result = await NewUsers.create(user);
-			res.status(200).json({ message: 'User created', result: result });
+			res.status(200).json({
+				message: 'User created',
+				result: result,
+			});
 		} catch (error) {
 			console.log(error.message);
 			res.status(500).json({ error: error.message });
