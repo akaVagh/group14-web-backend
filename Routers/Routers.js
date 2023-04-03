@@ -11,6 +11,7 @@ const jobDetails = require('../Controller/CareersController/JobOpenings');
 const jobLocationsController = require('../Controller/CareersController/jobLocationsController');
 const jobTitleController = require('../Controller/CareersController/jobTitleController');
 const JobApplicationController = require('../Controller/CareersController/JobApplicationController');
+const PersonalInformationController = require('../Controller/PersonalInformationController/PersonalInformationController')
 const CruiseList = require('../Controller/CruiseListController');
 const getCruiseDetail = require('../Controller/CruiseDetailController');
 const addNewUser = require('../Controller/UserAuth/user-registration');
@@ -31,6 +32,10 @@ router.route('/cruiselist/:id').get(CruiseList.getCruiseById);
 router.route('/cruisedetail/:id').get(getCruiseDetail);
 router.route('/jobLocations').get(jobLocationsController);
 router.route('/jobApplication').post(JobApplicationController);
+router.route('/booking/personalinformation').post(PersonalInformationController.addPersonalInformation);
+router.route('/booking/payment/:id').post(PersonalInformationController.addCardInformation);
+router.route('/booking/:id').post(PersonalInformationController.addBookingInformation);
+router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
 router.route('/feedback').post(feedback);
