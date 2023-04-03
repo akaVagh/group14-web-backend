@@ -2,6 +2,7 @@ const EventDetail = require('../../../Models/event-list');
 
 const createEvent = async (req, res) => {
 	const event = req.body;
+	console.log('event called');
 	try {
 		const result = await EventDetail.create(event);
 		res.status(200).json({
