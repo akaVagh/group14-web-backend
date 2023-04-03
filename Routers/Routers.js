@@ -19,6 +19,7 @@ const updateUser = require('../Controller/UserAuth/update-user');
 const feedback = require('../Controller/Feedback/feedback');
 const deleteAccount = require('../Controller/UserAuth/delete-user');
 const createEvent = require('../Controller/CareersController/EventCreation/add-event');
+const getEvents = require('../Controller/CareersController/EventCreation/get-events');
 
 router.route('/jobDetails').post(jobDetails);
 router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
@@ -34,6 +35,8 @@ router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
 router.route('/feedback').post(feedback);
 router.route('/addEvent').post(createEvent);
+router.route('/getEvents').get(getEvents.getAllEvents);
+router.route('/getEventById/:id').get(getEvents.getEventById);
 
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
