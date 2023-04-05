@@ -18,6 +18,12 @@ const leaselist = require('../Controller/CruiseLeaseController/leaselist');
 const createEvent = require('../Controller/EventCreation/add-event');
 const getEvents = require('../Controller/EventCreation/get-events');
 const router = express.Router();
+const cruiseSourceController = require('../Controller/HomepageController/cruiseSourceController');
+const cruiseDestinationController = require('../Controller/HomepageController/cruiseDestinationController');
+
+//homepage
+router.route('/cruiseDestination').get(cruiseDestinationController);
+router.route('/cruiseSource').get(cruiseSourceController);
 
 router.route('/jobDetails').post(jobDetails);
 router.route('/cruiseleaseupdate').post(cruiseleaseupdate);
