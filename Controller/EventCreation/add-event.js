@@ -1,4 +1,4 @@
-const EventDetail = require('../../../Models/event-list');
+const EventDetail = require('../../Models/event-list');
 
 const createEvent = async (req, res) => {
 	const event = req.body;

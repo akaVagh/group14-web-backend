@@ -1,4 +1,4 @@
-const EventDetail = require('../../../Models/event-list');
+const EventDetail = require('../../Models/event-list');
 
 const getAllEvents = async (req, res) => {
 	console.log('get events');
