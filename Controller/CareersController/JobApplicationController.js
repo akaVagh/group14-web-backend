@@ -1,3 +1,5 @@
+// Author: Akash Gupta - B00912118 - ak459448@dal.ca
+
 const jobApplicationModels = require('../../Models/job_application');
 
 const JobApplicationController=async(req, res) => {
