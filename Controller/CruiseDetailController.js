@@ -1,3 +1,5 @@
+/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+
 const CruiseDetail = require('../Models/cruise_details')
 
 const getCruiseDetail = async (req, res) => {

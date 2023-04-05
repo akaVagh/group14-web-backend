@@ -1,4 +1,4 @@
-const jobApplicationModels = require('../../Models/job_application')
+const jobApplicationModels = require('../../Models/job_application');
 
 const JobApplicationController=async(req, res) => {
     try {
@@ -12,4 +12,5 @@ const JobApplicationController=async(req, res) => {
     }
 }
 
-module.exports= JobApplicationController;
+
+module.exports = JobApplicationController;
