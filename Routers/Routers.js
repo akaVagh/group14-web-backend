@@ -8,13 +8,15 @@ const jobDetails = require('../Controller/CareersController/JobOpenings');
 const jobLocationsController = require('../Controller/CareersController/jobLocationsController');
 const jobTitleController = require('../Controller/CareersController/jobTitleController');
 const JobApplicationController = require('../Controller/CareersController/JobApplicationController');
-const PersonalInformationController = require('../Controller/PersonalInformationController/PersonalInformationController')
+const PersonalInformationController = require('../Controller/PersonalInformationController/PersonalInformationController');
 const CruiseList = require('../Controller/CruiseListController');
 const getCruiseDetail = require('../Controller/CruiseDetailController');
 const addNewUser = require('../Controller/UserAuth/user-registration');
 const login = require('../Controller/UserAuth/user-login');
 const feedback = require('../Controller/Feedback/feedback');
-const leaselist = require('../Controller/CruiseLeaseController/leaselist')
+const leaselist = require('../Controller/CruiseLeaseController/leaselist');
+const createEvent = require('../Controller/EventCreation/add-event');
+const getEvents = require('../Controller/EventCreation/get-events');
 const router = express.Router();
 
 router.route('/jobDetails').post(jobDetails);
@@ -27,9 +29,15 @@ router.route('/cruiselist/:id').get(CruiseList.getCruiseById);
 router.route('/cruisedetail/:id').get(getCruiseDetail);
 router.route('/jobLocations').get(jobLocationsController);
 router.route('/jobApplication').post(JobApplicationController);
-router.route('/booking/personalinformation').post(PersonalInformationController.addPersonalInformation);
-router.route('/booking/payment/:id').post(PersonalInformationController.addCardInformation);
-router.route('/booking/:id').post(PersonalInformationController.addBookingInformation);
+router
+	.route('/booking/personalinformation')
+	.post(PersonalInformationController.addPersonalInformation);
+router
+	.route('/booking/payment/:id')
+	.post(PersonalInformationController.addCardInformation);
+router
+	.route('/booking/:id')
+	.post(PersonalInformationController.addBookingInformation);
 router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
@@ -37,6 +45,11 @@ router.route('/leaselist').get(leaselist);
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);
+//event management
+router.route('/addEvent').post(createEvent);
+router.route('/getEvents').get(getEvents.getAllEvents);
+router.route('/getEventById/:id').get(getEvents.getEventById);
+
 router.route('/feedback').post(feedback);
 
 module.exports = router;
