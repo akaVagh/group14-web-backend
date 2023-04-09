@@ -30,10 +30,13 @@ router.route('/jobApplication').post(JobApplicationController);
 router.route('/booking/personalinformation').post(PersonalInformationController.addPersonalInformation);
 router.route('/booking/payment/:id').post(PersonalInformationController.addCardInformation);
 router.route('/booking/:id').post(PersonalInformationController.addBookingInformation);
+router.route('/rentbooking/:id').post(PersonalInformationController.addRentBookingInformation);
 router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
-router.route('/leaselist').get(leaselist);
+router.route('/leaselist').get(leaselist.leaselist);
+router.route('/leaselist/:id').get(leaselist.leaseById);
+
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);

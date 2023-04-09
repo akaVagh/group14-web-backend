@@ -46,6 +46,21 @@ exports.addBookingInformation = async (req, res) => {
   }
 };
 
+exports.addRentBookingInformation = async (req, res) => {
+  try {
+    const { cruisename, cruiseid, fromavailable,toavailable, rooms, base_amount, tax_amount, total_amount } = req.body;
+
+    const booking = await Booking.findById(req.params.id);
+    booking.rentBookingInformation = { cruisename, cruiseid, fromavailable,toavailable, rooms, base_amount, tax_amount, total_amount };
+    const savedBooking = await booking.save();
+
+    res.status(200).json({ message: 'Booking information added successfully!', booking: savedBooking });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Something went wrong!' });
+  }
+};
+
 exports.getBookingById = async (req, res) => {
 	try {
 		const booking = await Booking.findById(req.params.id);
