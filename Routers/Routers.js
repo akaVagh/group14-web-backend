@@ -47,7 +47,7 @@ router
 router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
-router.route('/leaselist').get(leaselist);
+router.route('/leaselist').get(leaselist.leaselist);
 router.route('/leaselist/:id').get(leaselist.leaseById);
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
