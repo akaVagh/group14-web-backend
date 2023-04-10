@@ -44,6 +44,9 @@ router
 router
 	.route('/booking/:id')
 	.post(PersonalInformationController.addBookingInformation);
+router
+	.route('/rentbooking/:id')
+	.post(PersonalInformationController.addRentBookingInformation);
 router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
