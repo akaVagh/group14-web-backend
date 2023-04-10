@@ -21,6 +21,7 @@ const detailsSchema = new mongoose.Schema({
 });
 
 const EventDetailSchema = new mongoose.Schema({
+	//_id: String,
 	contactDetails: contactDetailsSchema,
 	event: eventSchema,
 	details: detailsSchema,
