@@ -48,6 +48,7 @@ router.route('/booking/:id').get(PersonalInformationController.getBookingById);
 router.route('/jobTitles').get(jobTitleController);
 router.route('/careersList').get(jobDetails);
 router.route('/leaselist').get(leaselist);
+router.route('/leaselist/:id').get(leaselist.leaseById);
 //user authentication routes
 router.route('/addNewUser').post(addNewUser);
 router.route('/login').post(login);
@@ -55,7 +56,6 @@ router.route('/login').post(login);
 router.route('/addEvent').post(createEvent);
 router.route('/getEvents').get(getEvents.getAllEvents);
 router.route('/getEventById/:id').get(getEvents.getEventById);
-
 router.route('/feedback').post(feedback);
 
 module.exports = router;

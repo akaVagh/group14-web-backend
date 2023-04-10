@@ -1,4 +1,4 @@
-/* Author: Krina Mistry - B00927702 kr981143@dal.ca  */
+/* Authors : Krina Mistry - B00927702 kr981143@dal.ca, Raj Patel - B00931998 rj506049@dal.ca  */
 
 const mongoose = require('mongoose');
 
@@ -24,6 +24,16 @@ const bookingSchema = new mongoose.Schema({
     tax_amount: { type: Number, required: false },
     total_amount: { type: Number, required: false },
   },
+  rentBookingInformation: {
+    name: { type: String, required: false },
+    cruiseid: { type: String, required: false },
+    fromavailable: { type: Date, required: false },
+    toavailable: { type: Date, required: false },
+    rooms: { type: Number, required: false },
+    base_amount: { type: Number, required: false },
+    tax_amount: { type: Number, required: false },
+    total_amount: { type: Number, required: false },
+  }
 });
 
 const Booking = mongoose.model('Booking', bookingSchema);
